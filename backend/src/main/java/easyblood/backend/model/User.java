@@ -1,10 +1,8 @@
 package easyblood.backend.model;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
@@ -16,15 +14,14 @@ public class User {
     @Id
     private String id;
 
-    @NotEmpty
+    @NotEmpty(message = "Nome de usuario vazio")
     private String username;
 
-    @NotEmpty
+    @NotEmpty(message = "Senha vazia")
     private String password;
 
     @Transient
     private String passwordConfirm;
 
-//    private List<Role> roles;
-
+    private List<String> roles;
 }
