@@ -29,6 +29,11 @@ public class UserController {
         return ResponseEntity.created(URI.create(String.format("/user/%s", user.getId()))).build();
     }
 
+    @PostMapping
+    public ResponseEntity login(@RequestParam String user, @RequestParam String password) {
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping
     public ResponseEntity retornarTodos() {
         return ResponseEntity.ok(userService.todos());
