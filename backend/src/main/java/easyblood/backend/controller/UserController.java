@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity login(@RequestParam String user, @RequestParam String password) {
+    public ResponseEntity login() {
         return ResponseEntity.ok().build();
     }
 
