@@ -29,7 +29,7 @@ public class UserController {
         return ResponseEntity.created(URI.create(String.format("/user/%s", user.getId()))).build();
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity login() {
         return ResponseEntity.ok().build();
     }
