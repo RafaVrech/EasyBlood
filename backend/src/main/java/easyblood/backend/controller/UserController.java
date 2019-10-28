@@ -6,6 +6,7 @@ import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class UserController {
             @ApiResponse(code = 201, message = "Created",
                     responseHeaders = @ResponseHeader(response = URI.class, name = "location", description = "Location to created user (/user/{id])")),
             @ApiResponse(code = 409, message = "Conflict") })
+
     public ResponseEntity registration(@RequestBody User user) {
         if(userService.findByUsername(user.getUsername()) != null ||
             !user.getPassword().equals(user.getPasswordConfirm()) ||
@@ -36,9 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    @ApiOperation(value = "Test a basic auth user/login authenticity")
-    @ApiResponse(code = 200, message = "Ok")
-    public ResponseEntity login() {
-        return ResponseEntity.ok().build();
+    public ResponseEntity login(Authentication authentication) {
+        return ResponseEntity.ok(userService.findByUsername(authentication.getName()));
     }
 }
