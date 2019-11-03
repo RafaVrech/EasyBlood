@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -30,4 +31,22 @@ public class User {
     private String passwordConfirm;
 
     private List<String> roles;
+
+    private String cpf;
+
+    private String name;
+
+    private Date bithDate;
+
+    private String sex;
+
+    private String email;
+
+    private String phone;
+
+    private String bloodType;
+
+    private boolean eligibleDonor;
+
+    private Address address;
 }

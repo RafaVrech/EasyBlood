@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Data
 @Document(collection = "bloodcenters")
@@ -15,5 +16,7 @@ public class BloodCenter {
     @NotEmpty
     private String name;
 
-    private int bloodLiters;
+    private List<Blood> bloodList;
+
+    private Address address;
 }

@@ -12,6 +12,6 @@ public class BloodCenterServiceImpl implements BloodCenterService{
     BloodCenterRepository bloodCenterRepository;
 
     public Iterable<BloodCenter> getBloodCentersByBloodType(){
-        return bloodCenterRepository.findAll();
+        return bloodCenterRepository.findAll();//TODO
     }
 }
