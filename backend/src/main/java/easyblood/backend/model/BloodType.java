@@ -1,8 +1,10 @@
 package easyblood.backend.model;
 
+import lombok.Data;
 import lombok.ToString;
 
 @ToString
+@Data
 public enum BloodType {
     APositive("A+"),
     ANegative("A-"),
