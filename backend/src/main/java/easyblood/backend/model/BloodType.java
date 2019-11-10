@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.ToString;
 
 @ToString
-@Data
 public enum BloodType {
     APositive("A+"),
     ANegative("A-"),
@@ -19,5 +18,9 @@ public enum BloodType {
 
     BloodType(String type) {
         this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 }
