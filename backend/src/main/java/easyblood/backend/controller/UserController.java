@@ -21,22 +21,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    @ApiOperation(value = "Register a new user", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Created",
-                    responseHeaders = @ResponseHeader(response = URI.class, name = "location", description = "Location to created user (/user/{id])")),
-            @ApiResponse(code = 409, message = "Conflict") })
-
-    public ResponseEntity registration(@RequestBody User user) {
-        if(userService.findByUsername(user.getUsername()) != null ||
-            !user.getPassword().equals(user.getPasswordConfirm()) ||
-            !userService.save(user))
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
-
-        return ResponseEntity.created(URI.create(String.format("/user/%s", user.getId()))).build();
-    }
-
     @PostMapping("/login")
     public ResponseEntity login(Authentication authentication) {
         return ResponseEntity.ok(userService.findByUsername(authentication.getName()));
