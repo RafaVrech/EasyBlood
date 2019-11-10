@@ -8,6 +8,8 @@ public enum BloodType {
     ANegative("A-"),
     BPositive("B+"),
     BNegative("B-"),
+    ABNegative("AB-"),
+    ABPositive("AB-"),
     OPositive("O+"),
     ONegative("O-");
 
