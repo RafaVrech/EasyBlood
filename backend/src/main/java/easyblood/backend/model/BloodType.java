@@ -1,9 +1,12 @@
 package easyblood.backend.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.ToString;
 
 @ToString
+@JsonFormat
 public enum BloodType {
     APositive("A+"),
     ANegative("A-"),
@@ -20,7 +23,13 @@ public enum BloodType {
         this.type = type;
     }
 
+    @JsonValue
     public String getType() {
         return type;
+    }
+
+    @JsonCreator
+    public static BloodType fromValue(String value) {
+        return BloodType.valueOf(value);
     }
 }

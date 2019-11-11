@@ -19,4 +19,6 @@ public class BloodCenter {
     private List<Blood> bloodList;
 
     private Address address;
+
+    private String imageURL;
 }

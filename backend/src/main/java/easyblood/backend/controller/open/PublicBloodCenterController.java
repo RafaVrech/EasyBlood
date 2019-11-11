@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PublicBloodCenterController {
     @Autowired
     BloodCenterService bloodCenterService;
+
     @GetMapping
     public ResponseEntity getBloodCentersByBloodType(){
         return ResponseEntity.ok(bloodCenterService.getBloodCentersByBloodType());
