@@ -13,7 +13,7 @@ public enum BloodType {
     BPositive("B+"),
     BNegative("B-"),
     ABNegative("AB-"),
-    ABPositive("AB-"),
+    ABPositive("AB+"),
     OPositive("O+"),
     ONegative("O-");
 
@@ -30,6 +30,24 @@ public enum BloodType {
 
     @JsonCreator
     public static BloodType fromValue(String value) {
-        return BloodType.valueOf(value);
+        switch (value) {
+            case "A+":
+                return APositive;
+            case "A-":
+                return ANegative;
+            case "B+":
+                return BPositive;
+            case "B-":
+                return BNegative;
+            case "AB-":
+                return ABNegative;
+            case "AB+":
+                return ABPositive;
+            case "O+":
+                return OPositive;
+            case "O-":
+                return ONegative;
+        }
+        return null;
     }
 }
