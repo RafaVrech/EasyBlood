@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Address {
 
-    private String strees;
+    private String street;
     private String state;
     private String number;
     private long longitude;
