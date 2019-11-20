@@ -8,6 +8,6 @@ public class Address {
     private String street;
     private String state;
     private String number;
-    private long longitude;
-    private long latitude;
+    private float longitude;
+    private float latitude;
 }
