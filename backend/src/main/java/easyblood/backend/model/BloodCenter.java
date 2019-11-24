@@ -21,4 +21,6 @@ public class BloodCenter {
     private Address address;
 
     private String imageURL;
+
+    private User user;
 }
