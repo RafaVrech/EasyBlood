@@ -26,9 +26,19 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
+    public boolean update(User user) {
+        userRepository.save(user);
+        return true;
+    }
+
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public User findByCpf(String cpf) {
+        return userRepository.findByCpf(cpf);
     }
 
     public List<User> todos() {

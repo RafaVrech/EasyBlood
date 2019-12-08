@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
@@ -32,11 +33,12 @@ public class User {
 
     private List<String> roles;
 
+    @Indexed(unique=true)
     private String cpf;
 
     private String name;
 
-    private Date bithDate;
+    private Date birthDate;
 
     private String sex;
 
@@ -45,6 +47,8 @@ public class User {
     private String phone;
 
     private String bloodType;
+
+    private String report;
 
     private boolean eligibleDonor;
 
