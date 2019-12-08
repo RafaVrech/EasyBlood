@@ -2,6 +2,7 @@ package easyblood.backend.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
@@ -14,6 +15,7 @@ public class BloodCenter {
     private String id;
 
     @NotEmpty
+    @Indexed(unique=true)
     private String name;
 
     private List<Blood> bloodList;
@@ -23,4 +25,6 @@ public class BloodCenter {
     private String imageURL;
 
     private User user;
+
+    private String requirements;
 }
