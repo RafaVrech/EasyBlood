@@ -15,7 +15,6 @@ public class BloodCenter {
     private String id;
 
     @NotEmpty
-    @Indexed(unique=true)
     private String name;
 
     private List<Blood> bloodList;

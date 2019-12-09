@@ -33,7 +33,6 @@ public class User {
 
     private List<String> roles;
 
-    @Indexed(unique=true)
     private String cpf;
 
     private String name;
